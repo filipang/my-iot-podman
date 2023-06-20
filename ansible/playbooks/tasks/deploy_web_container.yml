@@ -1,15 +1,4 @@
 ---
-- name: "Download Image"
-  containers.podman.podman_image:
-    name: "docker.io/library/nginx"
-    tag: "latest"
-    state: "present"
-  become: true
-  tags:
-    - "image"
-    - "podman"
-    - "web"
-
 - name: "Manage container-web Service File"
   ansible.builtin.template:
     src: "container-web.service.j2"

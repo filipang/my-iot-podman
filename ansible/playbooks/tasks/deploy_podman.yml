@@ -1,9 +1,13 @@
 ---
-- name: "Manage Podman Packages"
-  package:
-    name: "podman"
-    state: "present"
-  become: true
+- name: "Create the nginx container"
+  containers.podman.podman_container:
+  name: nginx
+    hostname: nginx
+    image: "{{ container_registry }}/nginx"
+    publish: 80:80
+    volume:
+      - "{{ homedir }}/nginx:/etc/nginx/conf.d:Z"
+    state: started
 
 - name: "Start & Enable Podman Auto Update Timer"
   ansible.builtin.service:
