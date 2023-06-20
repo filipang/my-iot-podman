@@ -30,7 +30,7 @@ On the desired host, the following command should be executed, once.
 
 ```bash
 /usr/bin/ansible-pull \
-  --url https://github.com/dschier-wtd/fedora-iot.git \
+  --url https://github.com/filipang/my-iot-podman.git \
   --inventory inventory/hosts.yml \
   --checkout main \
   ansible/playbooks/install_requirements.yml \

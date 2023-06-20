@@ -1,6 +1,6 @@
 ---
 - name: "Manage Podman Packages"
-  ansible.builtin.package:
+  package:
     name: "podman"
     state: "present"
   become: true
