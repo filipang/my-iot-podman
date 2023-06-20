@@ -1,12 +1,10 @@
 ---
 - name: "Create the nginx container"
   containers.podman.podman_container:
-  name: nginx
+    name: nginx
     hostname: nginx
-    image: "{{ container_registry }}/nginx"
+    image: "docker.io/library/nginx"
     publish: 80:80
-    volume:
-      - "{{ homedir }}/nginx:/etc/nginx/conf.d:Z"
     state: started
 
 - name: "Start & Enable Podman Auto Update Timer"
