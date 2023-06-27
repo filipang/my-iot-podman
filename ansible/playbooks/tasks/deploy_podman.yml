@@ -7,11 +7,11 @@
   become: true
 
 - name: "Download printer container"
-    containers.podman.podman_image:
-      name: "192.168.69.21:5000/printer"
-      tag: "latest"
-      state: "present"
-    become: true
+  containers.podman.podman_image:
+    name: "192.168.69.21:5000/printer"
+    tag: "latest"
+    state: "present"
+  become: true
 
 - name: "Manage printer container Service File"
   ansible.builtin.template:
