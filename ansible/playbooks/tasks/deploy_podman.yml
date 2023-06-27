@@ -1,11 +1,4 @@
 ---
-- name: "Create the nginx container"
-  containers.podman.podman_container:
-    name: nginx
-    hostname: nginx
-    image: "docker.io/library/nginx"
-    state: started
-
 - name: "Start & Enable Podman Auto Update Timer"
   ansible.builtin.service:
     name: "podman-auto-update.timer"

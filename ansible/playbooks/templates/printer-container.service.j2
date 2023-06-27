@@ -21,7 +21,7 @@ ExecStart=/usr/bin/podman run \
 	--tty \
 	--name web \
 	--publish 80:80 \
-	docker.io/library/nginx:latest
+	printer:latest
 ExecStop=/usr/bin/podman stop \
 	--ignore -t 10 \
 	--cidfile=%t/%n.ctr-id
