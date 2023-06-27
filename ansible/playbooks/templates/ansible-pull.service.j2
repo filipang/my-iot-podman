@@ -11,5 +11,5 @@ ExecStart=/usr/bin/ansible-pull \
 	--only-if-changed \
 	--checkout main \
 	--sleep {{ ansible_pull_service_sleep }} \
-	ansible/playbooks/install_requirements.yml \
-	ansible/playbooks/configure_server.yml
+	{{ ansible_path }}/playbooks/install_requirements.yml \
+	{{ ansible_path }}/playbooks/configure_server.yml
