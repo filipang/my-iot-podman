@@ -1,0 +1,30 @@
+{{ ansible_managed | comment }}
+
+# Printer Broker Configuration
+
+# Set the listener port
+listener 1881
+
+# TODO: Enable persistence
+persistence false
+persistence_file printer_broker.db
+persistence_location .
+
+# Set autosave interval (in seconds)
+autosave_interval 300
+
+# Bridge configuration
+# Should these be templated?
+# this is the printer's individual broker, config for example i feel shouldn't be templated
+# IDK how else to do it so
+# TODO: Figure it out           -Ionut
+connection printer_to_admin
+address {{ admin_broker_address }}:1882
+topic /printer/+/status out 0
+topic /printer/+/status_request in 0
+topic /printer/+/config in 0
+topic /printer/+/resource/# in 0
+# Temporary solution until we decide MQTT security
+allow_anonymous true         
+
+
