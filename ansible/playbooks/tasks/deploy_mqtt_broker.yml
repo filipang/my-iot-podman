@@ -1,0 +1,18 @@
+---
+- name: "Update moquitto configuration"
+  ansible.builtin.template:
+    src: "mosquitto.conf.j2"
+    dest: "/etc/mosquitto/mosquitto.conf"
+    owner: "root"
+    group: "root"
+    mode: 0644
+  become: true
+    
+- name: "Start & Enable mosquitto service"
+  ansible.builtin.service:
+    name: "mosquitto.service"
+    state: "started"
+    enabled: true
+    daemon_reload: true
+  become: true
+...
