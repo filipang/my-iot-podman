@@ -4,7 +4,7 @@
 
   vars:
     ansible_pull_service_url: "https://github.com/filipang/my-iot-podman.git"
-    ansible_pull_service_sleep: "30"
+    ansible_pull_service_sleep: "20"
     ansible_pull_timer_schedule: "*:0/30:00"
     admin_address: "192.168.0.104"
     # On gitlab 
