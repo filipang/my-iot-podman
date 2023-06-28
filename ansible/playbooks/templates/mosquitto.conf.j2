@@ -19,7 +19,7 @@ autosave_interval 300
 # IDK how else to do it so
 # TODO: Figure it out           -Ionut
 connection printer_to_admin
-address {{ admin_broker_address }}:1882
+address {{ admin_address }}:1882
 topic /printer/+/status out 0
 topic /printer/+/status_request in 0
 topic /printer/+/config in 0
