@@ -12,6 +12,8 @@ Restart=on-failure
 TimeoutStopSec=70
 ExecStart=/usr/bin/podman run \
 	-e PRINTER_ID=68 \
+	-e PRINTER_HOSTNAME=192.168.192.168 \
+	-e BROKER_ADDRESS=192.168.0.104 \
 	--network=host\
 	printer:latest
 ExecStop=/usr/bin/podman stop \
