@@ -8,6 +8,7 @@ After=network-online.target
 ExecStart=/usr/bin/ansible-pull \
 	--url {{ ansible_pull_service_url }} \
 	--inventory inventory/hosts.yml \
+	--only-if-changed \
 	--checkout main \
 	--sleep {{ ansible_pull_service_sleep }} \
 	{{ ansible_path }}/playbooks/install_requirements.yml \
