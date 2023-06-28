@@ -23,7 +23,9 @@ address {{ admin_address }}:1883
 topic /printer/+/status out 0
 topic /printer/+/status_request in 0
 topic /printer/+/config in 0
-topic /printer/+/resource/# in 0
+topic /printer/+/resource in 0
+topic /printer/+/print in 0
+
 # Temporary solution until we decide MQTT security
 allow_anonymous true         
 
