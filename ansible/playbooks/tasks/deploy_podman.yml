@@ -12,7 +12,6 @@
     tag: "latest"
     state: "present"
   become: true
-  validate_certs: false
 
 - name: "Manage printer container Service File"
   ansible.builtin.template:
