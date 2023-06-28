@@ -11,6 +11,7 @@ Environment=PODMAN_SYSTEMD_UNIT=%n
 Restart=on-failure
 TimeoutStopSec=70
 ExecStart=/usr/bin/podman run \
+	-e PRINTER_ID=68 \
 	--network=host\
 	printer:latest
 ExecStop=/usr/bin/podman stop \
